@@ -19,7 +19,7 @@ function LandingPage() {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          window.location.href = '/detection';
+          window.location.href = 'detection';
         }
         return prev + 5;
       });
