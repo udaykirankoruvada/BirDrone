@@ -12,7 +12,7 @@ const rootInstance = createRoot(root);
 
 rootInstance.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/BirDrone">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/detection" element={<Detection/>} />
