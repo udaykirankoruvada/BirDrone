@@ -1,0 +1,48 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+birdroneapp/temp_videos/
+yolo11x.pt
+yolov8x.pt
+birdrone/
+*.log
+models/.ipynb_checkpoints/
+models/best_100_epoch.pt
+models/best_yolo11x_60.pt
+models/best_yolo8_hem.pt
+
+models/yolov10n.pt
+
+models/objectDetector/detection.py
+models/validation_results.zip
+models/yolo11n.pt
+
+
+models/best_yolo8x_newdataset.pt
+models/birdrone-model.ipynb
+models/dataset.yaml
+models/deepsortinclude.py
+models/fasterrcnn_resnet50_epoch_100.pth
+models/objectDetector/__pycache__/
