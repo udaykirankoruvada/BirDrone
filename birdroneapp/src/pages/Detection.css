@@ -1,0 +1,364 @@
+/* Detection.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 1400px;
+    min-width: 80vw;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden; /* Ensure no scrollbar for the container */
+    transition: all 0.3s ease-in-out;
+    margin: auto;
+  }
+  
+  .container.expanded {
+    max-width: 80vw;
+    max-height: 90vh;
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: center;
+    line-height: 1.3;
+  }
+  
+  .subheading {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+    text-align: center;
+  }
+  
+  .upload-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    width: 100%;
+    height: 40px; /* Set a consistent height for all elements */
+  }
+  
+  .file-input,
+  .upload-btn,
+  .camera-btn,
+  .target-select {
+    height: 100%; /* Ensure all elements take the full height of the upload-controls */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .file-input {
+    padding: 0 10px; /* Adjust padding to fit the height */
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .upload-btn {
+    padding: 0 24px; /* Adjust padding to fit the height */
+    font-size: 1.1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .camera-btn {
+    padding: 0 24px; /* Adjust padding to fit the height */
+    font-size: 1.1rem;
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .target-select {
+    padding: 0 10px; /* Adjust padding to fit the height */
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* Optional: remove the default select arrow in some browsers: */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .target-select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+  
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
+    align-items: stretch;
+    max-height: 75vh;
+    overflow-y: auto; /* Ensure a single scrollbar for the content-wrapper */
+    overflow-x: hidden; /* Ensure no bottom scrollbar */
+  }
+  
+  .original-image-section, 
+  .results-section {
+    width: 48%;
+    min-width: 300px;
+    max-height: 100%;
+    overflow-y: hidden; /* Ensure no scrollbar for individual sections */
+  }
+  .results-section{
+    overflow-y: auto;
+  }
+  
+  .preview-container,
+  .detection-results {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure positioning for fullscreen icon */
+  }
+  
+  .preview-image,
+  .preview-video,
+  .detection-image,
+  .detection-video {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 5px 0;
+  }
+  
+  .fullscreen-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .camera-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .camera-video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: black; /* Ensure the video element has a background color */
+  }
+  
+  .metrics {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .metrics p {
+    margin: 0;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  @media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        max-height: none;
+    }
+  
+    .original-image-section, 
+    .results-section {
+        width: 100%;
+    }
+  
+    .preview-image,
+    .preview-video,
+    .detection-image,
+    .detection-video {
+        max-height: 250px;
+    }
+  
+    .heading {
+        font-size: 1.5rem;
+    }
+  
+    .metrics {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .upload-controls {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .file-input,
+    .upload-btn,
+    .camera-btn,
+    .target-select {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  
+    .content-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .original-image-section, 
+    .results-section {
+      width: 100%;
+    }
+  
+    .preview-image,
+    .preview-video,
+    .detection-image,
+    .detection-video {
+      max-height: 200px;
+    }
+  }
+  
+  .file-camera-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .separator {
+    width: 1px;
+    height: 40px;
+    background-color: black;
+  }
+  
+  .capture-btn {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 1rem 0 0 1rem;
+    height: fit-content;
+    align-self: center;
+  }
+  
+  .camera-video-section {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+  }
+  
+  .target-select {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* Optional: remove the default select arrow in some browsers: */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .target-select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+  
+  /* For the "No DETECTIONS Found" message */
+  .no-detections {
+    color: #ff0000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .file-upload {
+    display: flex;
+    align-items: center;
+    background-color: #007BFF;
+    border-radius: .2rem;
+  }
+  
+  .camera-btn {
+    background-color: #007BFF;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .progress {
+    height: 20px;
+    background-color: #4caf50;
+    width: 0;
+    transition: width 0.4s ease;
+  }
+  

@@ -1,0 +1,141 @@
+/* LandingPage.css */
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative; /* For absolute positioning of background */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Background image set dynamically via inline styles */
+  background-size: cover; /* Or contain, depending on your needs */
+  background-position: center;
+  z-index: -1; /* Behind other content */
+}
+
+header {
+  /* Style your header as needed */
+  color: white;
+  padding: 20px;
+  width: 100%; /* Ensure header spans full width */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between; /* Align items on opposite ends */
+  align-items: center; /* Vertically center content */
+  max-width: 1200px; /* Set a maximum width for the header content */
+  margin: 0 auto; /* Center the header content */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  flex: 1; /* Allow main content to take up available space */
+  padding: 40px; /* Add some padding to the main content */
+  position: relative; /* So content is above background */
+  z-index: 1;
+}
+
+.main-content {
+  max-width: 960px; /* Set a maximum width for the main content */
+  margin: 0 auto; /* Center the main content */
+}
+
+#hero {
+  text-align: center;
+  padding: 100px 0; /* Adjust padding as needed */
+  color: #333; /* Darker text color for better contrast */
+}
+
+#hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.learn-more {
+  background-color: #007bff; /* Example button color */
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  z-index: 2; /* Ensure footer is above other content */
+}
+
+.intro-video {
+  width: 100%;
+  height: calc(100vh - 90px); /* Adjust height to fit within the viewport */
+  object-fit: cover; /* Ensure video covers the area */
+  position: relative;
+  z-index: -1; /* Behind other content */
+}
+
+/* Responsive adjustments (example) */
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 2em;
+  }
+  #hero p {
+    font-size: 1em;
+  }
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #f3f3f3;
+  height: 2px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #61dafb;
+  width: 0;
+  transition: width 1s linear;
+}
