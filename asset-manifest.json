@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/BirDrone/birdroneapp/static/css/main.ef9da971.css",
-    "main.js": "/BirDrone/birdroneapp/static/js/main.1842f627.js",
+    "main.js": "/BirDrone/birdroneapp/static/js/main.32a1aa9a.js",
     "static/media/intro_video1.mp4": "/BirDrone/birdroneapp/static/media/intro_video1.afdc84cc4ace8837b294.mp4",
     "static/media/image5.jpg": "/BirDrone/birdroneapp/static/media/image5.82b3aee7c3c1b7812bf3.jpg",
     "static/media/image3.jpg": "/BirDrone/birdroneapp/static/media/image3.cd7c3a677fd139560067.jpg",
     "static/media/image2.jpg": "/BirDrone/birdroneapp/static/media/image2.f6e66b5c06ad0908e078.jpg",
     "index.html": "/BirDrone/birdroneapp/index.html",
     "main.ef9da971.css.map": "/BirDrone/birdroneapp/static/css/main.ef9da971.css.map",
-    "main.1842f627.js.map": "/BirDrone/birdroneapp/static/js/main.1842f627.js.map"
+    "main.32a1aa9a.js.map": "/BirDrone/birdroneapp/static/js/main.32a1aa9a.js.map"
   },
   "entrypoints": [
     "static/css/main.ef9da971.css",
-    "static/js/main.1842f627.js"
+    "static/js/main.32a1aa9a.js"
   ]
 }
